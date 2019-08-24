@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'serials.apps.SerialsConfig',
     'options.apps.OptionsConfig',
     'projects.apps.ProjectsConfig',
+    'products.apps.ProductsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
