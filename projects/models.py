@@ -9,3 +9,5 @@ class Project(models.Model):
     project_name = models.CharField(max_length=100)
     def __str__(self):
         return  self.project_code + ' - ' + self.project_name
+    class Meta:
+        ordering = ["project_code"]

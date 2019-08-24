@@ -15,3 +15,5 @@ class Serial(models.Model):
     serial_number = models.CharField(max_length=4, unique=True)
     def __str__(self):
         return  self.aircraft + '-' + self.serial_number + '-' + self.station.station_code
+    class Meta:
+        ordering = ["serial_number"]

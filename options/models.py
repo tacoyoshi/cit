@@ -7,3 +7,5 @@ class Option(models.Model):
     option_name = models.CharField(max_length=100, unique = True)
     def __str__(self):
         return self.option_code + ' - ' + self.option_name
+    class Meta:
+        ordering = ["option_code"]
