@@ -31,13 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'stations.apps.StationsConfig',
-    'serials.apps.SerialsConfig',
     'options.apps.OptionsConfig',
-    'projects.apps.ProjectsConfig',
-    'products.apps.ProductsConfig',
     'parts.apps.PartsConfig',
+    'products.apps.ProductsConfig',
+    'projects.apps.ProjectsConfig',
     'psw.apps.PswConfig',
+    'revisions.apps.RevisionsConfig',
+    'serials.apps.SerialsConfig',
+    'stations.apps.StationsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

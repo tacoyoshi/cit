@@ -33,9 +33,9 @@ STATUS_CHOICES = [
 
 class Psw(Part):
     psw_number = models.PositiveIntegerField(unique=True, verbose_name='PSW Number', editable=False)
-    psw_created = models.DateField(auto_now_add=True, editable=False, verbose_name='Date Created')
+    psw_created = models.DateField(auto_now_add=True, verbose_name='Date Created')
     psw_requestor = models.EmailField(max_length=100, verbose_name='Submitter Email')
-    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True)
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True, verbose_name='Project')
     psw_need_qty = models.PositiveIntegerField(default=0, blank=True, verbose_name='Quantity Required')
     psw_due_date = models.DateField(blank=True, verbose_name='Date Needed')
     psw_part_rev = models.CharField(max_length=50, blank=True, verbose_name='Revision')
@@ -67,4 +67,7 @@ class Psw(Part):
         return  self.psw_number + ' - ' + self.part_number
 
     class Meta:
-        ordering = ['psw_number']
+        ordering = ['-psw_number']
+        get_latest_by = ['psw_number', 'psw_created']
+        verbose_name = 'PSW'
+        verbose_name_plural = "PSW's"
