@@ -1,6 +1,7 @@
 from django.db import models
 from parts.models import Part
 from projects.models import Project
+from comments.models import Comment
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -62,6 +63,7 @@ class Psw(Part):
     purchase_date = models.DateField(blank=True, verbose_name='Purchase Date')
     psw_status = models.CharField(max_length=3, choices=STATUS_CHOICES, default='NEW', verbose_name='PSW Status')
     psw_completed = models.DateField(blank=True, verbose_name='Completed Date')
+    psw_comments = models.ManyToManyField(Comment, blank=True, verbose_name='Comments')
 
     def __str__(self):
         return  self.psw_number + ' - ' + self.part_number

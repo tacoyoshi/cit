@@ -11,3 +11,5 @@ class Product(models.Model):
 
     class Meta:
         ordering = ['product_code']
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'

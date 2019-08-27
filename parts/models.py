@@ -34,6 +34,7 @@ class Part(models.Model):
 
     part_number = models.CharField(max_length=50, unique=True, verbose_name='Part Number')
     part_name = models.CharField(max_length=200, verbose_name='Part Description')
+    part_created = models.DateField(auto_now_add=True, verbose_name='Date Created')
     products = models.ManyToManyField(Product, blank=True, verbose_name='Products')
     part_approved = models.BooleanField(default=False, verbose_name='Approved Type Design')
     stations = models.ManyToManyField(Station, blank=True, verbose_name='Stations')
@@ -66,3 +67,6 @@ class Part(models.Model):
 
     class Meta:
         ordering = ['part_number']
+        get_latest_by = ['-part_created']
+        verbose_name = 'Part'
+        verbose_name_plural = 'Parts'

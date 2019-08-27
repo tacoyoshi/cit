@@ -25,3 +25,5 @@ class Serial(models.Model):
 
     class Meta:
         ordering = ['product', 'serial_number', 'station']
+        verbose_name = 'Serial'
+        verbose_name_plural = 'Serials'

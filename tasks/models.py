@@ -1,4 +1,5 @@
 from django.db import models
+from comments.models import Comment
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -11,6 +12,7 @@ class Task(models.Model):
     task_assigned_to = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='task_assignees',verbose_name='Assigned To')
     task_due = models.DateField(blank=True, null=True, verbose_name='Date Created')
     task_completed = models.DateField(blank=True, null=True, verbose_name='Date Completed')
+    task_comments = models.ManyToManyField(Comment, blank=True, verbose_name='Comments')
 
     def __str__(self):
         return self.task_name

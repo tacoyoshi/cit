@@ -10,4 +10,6 @@ class Station(models.Model):
         return self.station_code + ' - ' + self.station_name
 
     class Meta:
-        ordering = ["station_code"]
+        ordering = ['station_code']
+        verbose_name = 'Station'
+        verbose_name_plural = 'Stations'
