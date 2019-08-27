@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'revisions.apps.RevisionsConfig',
     'serials.apps.SerialsConfig',
     'stations.apps.StationsConfig',
+    'tasks.apps.TasksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 

@@ -40,7 +40,7 @@ class Psw(Part):
     psw_due_date = models.DateField(blank=True, verbose_name='Date Needed')
     psw_part_rev = models.CharField(max_length=50, blank=True, verbose_name='Revision')
     psw_notes = models.TextField(blank=True, verbose_name='PSW Notes')
-    psw_req_min = models.IntegerField(default=0, verbose_name='Requested Min Stock')
+    psw_req_min = models.PositiveIntegerField(default=0, verbose_name='Requested Min Stock')
     buyer = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='buyers',verbose_name='Buyer')
     supplier_name = models.CharField(max_length=100, blank=True, verbose_name='Supplier Name')
     supplier_id = models.CharField(max_length=8, blank=True, verbose_name='Supplier ID')
