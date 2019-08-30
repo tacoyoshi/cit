@@ -9,6 +9,9 @@ class Station(models.Model):
     def __str__(self):
         return self.station_code + ' - ' + self.station_name
 
+    def get_absolute_url(self):
+        return reverse('station-detail', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['station_code']
         verbose_name = 'Station'
