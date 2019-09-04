@@ -8,18 +8,23 @@ from stations.models import Station
 
 class StationList(ListView):
     model = Station
+    context_object_name = 'stations'
 
 class StationView(DetailView):
     model = Station
+    context_object_name = 'station'
 
 class StationCreate(CreateView):
     model = Station
     fields = ['station_code', 'station_name']
+    context_object_name = 'station'
 
 class StationUpdate(UpdateView):
     model = Station
     fields = ['station_code', 'station_name']
+    context_object_name = 'station'
 
 class StationDelete(DeleteView):
     model = Station
+    context_object_name = 'station'
     success_url = reverse_lazy('station-list')
