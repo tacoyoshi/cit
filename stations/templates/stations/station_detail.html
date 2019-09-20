@@ -1,2 +1,4 @@
-<h1>{{ station.station_code }}</h1>
+<h2>{{ station.station_code }}</h2>
 <h3>{{ station.station_name }}</h3>
+<a href="{% url 'stations:station-update' station.id %}"><button type="edit" name="button">Edit</button></a>
+<a href="{% url 'stations:station-list' %}"><button type="button" name="back">Back</button></a>

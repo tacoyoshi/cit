@@ -11,7 +11,7 @@ class Station(models.Model):
         return self.station_code + ' - ' + self.station_name
 
     def get_absolute_url(self):
-        return reverse('station-detail', kwargs={'pk': self.pk})
+        return reverse('stations:station-detail', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['station_code']
